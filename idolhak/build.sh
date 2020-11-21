@@ -8,7 +8,7 @@ set -o errexit
 BASE_PWD=$PWD
 PATH=".:./asm/bin/:$PATH"
 INROM="idolhak.nes"
-OUTROM="idolhak_en.nes"
+OUTROM="idolhak_pt.nes"
 WLADX="./wla-dx/binaries/wla-6502"
 WLALINK="./wla-dx/binaries/wlalink"
 
@@ -82,7 +82,7 @@ echo "**************************************************************************
 mkdir -p out/script
 mkdir -p out/script/credits
 mkdir -p out/script/maps
-scriptconv script/ table/idolhak_en.tbl table/idolhak_chara.tbl out/script/
+scriptconv script/ table/idolhak_pt.tbl table/idolhak_chara.tbl out/script/
 
 filepatch "$OUTROM" 0x43CE out/script/cybergong_inout.bin "$OUTROM"
 filepatch "$OUTROM" 0x473A out/script/tamashikaya.bin "$OUTROM"
@@ -96,7 +96,7 @@ echo "Building compression table..."
 echo "*******************************************************************************"
 
 mkdir -p out/cmptbl
-cmptablebuild table/idolhak_en.tbl out/cmptbl/cmptbl.bin
+cmptablebuild table/idolhak_pt.tbl out/cmptbl/cmptbl.bin
 
 echo "********************************************************************************"
 echo "Applying ASM patches..."
